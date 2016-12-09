@@ -1,14 +1,13 @@
 import string
 import re
 import random
-from random import SystemRandom
+#from random import SystemRandom
 import rstr
-from rstr import Rstr
 import os
 
 # rs = Rstr(SystemRandom())
 
-txtFileDirectoryPath = '/Users/GaoJie/Projects/SchoolProjects/5271/passwordGen/passwordFiles' #Change this path to the directory where you want
+txtFileDirectoryPath = './passwordFiles' #Change this path to the directory where you want
 if not os.path.isdir(txtFileDirectoryPath):                                                   #the password files to be placed
     os.makedirs(txtFileDirectoryPath)
 
@@ -124,7 +123,7 @@ for index in range (0, 30000):
 writeFile.close()
 
 
-txtFileDirectoryPath = '/Users/GaoJie/Projects/SchoolProjects/5271/passwordGen'  #Path of txt src files and .py file
+txtFileDirectoryPath = '..'  #Path of txt src files and .py file
 os.chdir(txtFileDirectoryPath)
 readPasswordFile = 'TwentyThousandLeaguesUnderTheSeaVerne.txt'
 with open(readPasswordFile) as bookFile:
@@ -132,7 +131,7 @@ with open(readPasswordFile) as bookFile:
 
 numLines = len(bookList)
 pattern = re.compile(r'"?\.{1,4}$')
-txtFileDirectoryPath = '/Users/GaoJie/Projects/SchoolProjects/5271/passwordGen/passwordFiles'
+txtFileDirectoryPath = './passwordFiles'
 os.chdir(txtFileDirectoryPath)
 
 passwordOutputFile = 'bookWordsFirstLetter.txt'
