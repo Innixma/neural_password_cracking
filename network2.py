@@ -3,25 +3,36 @@ from keras.models import Sequential
 from keras.layers import Dense
 from keras.layers import LSTM
 import numpy as np
+import re
 
-data_dir = 'passwordGen/passwordFiles/'
+data_dir = 'passwordGen/'
 
 def import_data(filename):
     f = open(filename, 'r')
     data = f.read()
     f.close()
-    data = data.split('\n')
-    data = data[:-1]
-    data = [list(i) for i in data]
-    data = [[ord(j) for j in i] for i in data]
+    data = data.replace('\n',' ')
+    data = data.split(' ')
+    #data = data[:-1]
+    #data = [list(i) for i in data]
+    #data = [[ord(j) for j in i] for i in data]
+    data = list(filter(None, data)) 
     data = np.array(data)
     return data
     
-p_8type2 = import_data(data_dir+'8type2.txt')
+book = import_data(data_dir+'TwentyThousandLeaguesUnderTheSeaVerne.txt')
 # fix random seed for reproducibility
 seed = 7
 np.random.seed(seed)
 
+print('Build model...')
+model = Sequential()
+model.add(Embedding(max_features, 128, dropout=0.2))
+model.add(LSTM(128, dropout_W=0.2, dropout_U=0.2))  # try using a GRU instead, for fun
+model.add(Dense(1))
+model.add(Activation('sigmoid'))
+
+"""
 total_val = 0
 for i in p_8type2:
     total_val += np.sum(i)
@@ -50,7 +61,7 @@ model.fit(p_8type2[:25000], c_8type2[:25000], nb_epoch=400, batch_size=1000)
 scores = model.evaluate(p_8type2[25000:], c_8type2[25000:])
 print("%s: %.2f%%" % (model.metrics_names[1], scores[1]*100))
 
-
+"""
 
 
 
