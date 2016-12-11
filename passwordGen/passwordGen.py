@@ -29,36 +29,39 @@ for j in [500,1000,1500,2000]:
         writeFile.write(newWord)
     writeFile.close()
 
-passwordOutputFile = 'ThreeType.txt'
-writeFile = open(passwordOutputFile, 'w')
-for index in range (0, 30000):
-    wordOne = random.randrange(0, fileSize, 1)
-    wordTwo = random.randrange(0, fileSize, 1)
-    wordThree = random.randrange(0, fileSize, 1)
-    newWord = wordsList[wordOne].strip('\n') + wordsList[wordTwo].strip('\n') + wordsList[wordThree].strip('\n') + '\n'
-    writeFile.write(newWord)
-writeFile.close()
+for j in [500,1000,1500,2000]:
+    passwordOutputFile = 'ThreeType' + str(j) + '.txt'
+    writeFile = open(passwordOutputFile, 'w')
+    for index in range (0, 30000):
+        wordOne = random.randrange(0, fileSize, 1)
+        wordTwo = random.randrange(0, fileSize, 1)
+        wordThree = random.randrange(0, fileSize, 1)
+        newWord = wordsList[wordOne].strip('\n') + wordsList[wordTwo].strip('\n') + wordsList[wordThree].strip('\n') + '\n'
+        writeFile.write(newWord)
+    writeFile.close()
 
-passwordOutputFile = 'FourTypeUpper.txt'
-writeFile = open(passwordOutputFile, 'w')
-for index in range (0, 30000):
-    wordOne = random.randrange(0, fileSize, 1)
-    wordTwo = random.randrange(0, fileSize, 1)
-    wordThree = random.randrange(0, fileSize, 1)
-    wordFour = random.randrange(0, fileSize, 1)
-    newWord = wordsList[wordOne].strip('\n').title() + wordsList[wordTwo].strip('\n').title() + wordsList[wordThree].strip('\n').title() + wordsList[wordFour].strip('\n').title() + '\n'
-    writeFile.write(newWord)
-writeFile.close()
+for j in [500,1000,1500,2000]:
+    passwordOutputFile = 'FourType' + str(j) + 'Upper.txt'
+    writeFile = open(passwordOutputFile, 'w')
+    for index in range (0, 30000):
+        wordOne = random.randrange(0, fileSize, 1)
+        wordTwo = random.randrange(0, fileSize, 1)
+        wordThree = random.randrange(0, fileSize, 1)
+        wordFour = random.randrange(0, fileSize, 1)
+        newWord = wordsList[wordOne].strip('\n').title() + wordsList[wordTwo].strip('\n').title() + wordsList[wordThree].strip('\n').title() + wordsList[wordFour].strip('\n').title() + '\n'
+        writeFile.write(newWord)
+    writeFile.close()
 
-passwordOutputFile = 'ThreeTypeUpper.txt'
-writeFile = open(passwordOutputFile, 'w')
-for index in range (0, 30000):
-    wordOne = random.randrange(0, fileSize, 1)
-    wordTwo = random.randrange(0, fileSize, 1)
-    wordThree = random.randrange(0, fileSize, 1)
-    newWord = wordsList[wordOne].strip('\n').title() + wordsList[wordTwo].strip('\n').title() + wordsList[wordThree].strip('\n').title() + '\n'
-    writeFile.write(newWord)
-writeFile.close()
+for j in [500,1000,1500,2000]:
+    passwordOutputFile = 'ThreeType' + str(j) + 'Upper.txt'
+    writeFile = open(passwordOutputFile, 'w')
+    for index in range (0, 30000):
+        wordOne = random.randrange(0, fileSize, 1)
+        wordTwo = random.randrange(0, fileSize, 1)
+        wordThree = random.randrange(0, fileSize, 1)
+        newWord = wordsList[wordOne].strip('\n').title() + wordsList[wordTwo].strip('\n').title() + wordsList[wordThree].strip('\n').title() + '\n'
+        writeFile.write(newWord)
+    writeFile.close()
 
 passwordOutputFile = '8type2.txt'
 writeFile = open(passwordOutputFile, 'w')
