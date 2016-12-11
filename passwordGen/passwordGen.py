@@ -11,22 +11,23 @@ txtFileDirectoryPath = './passwordFiles' #Change this path to the directory wher
 if not os.path.isdir(txtFileDirectoryPath):                                                   #the password files to be placed
     os.makedirs(txtFileDirectoryPath)
 
-readPasswordFile = 'wordsEn.txt'
+readPasswordFile = '10000frequentWordsMedium.txt'
 with open(readPasswordFile) as wordFile:
     wordsList = wordFile.readlines()
 fileSize = len(wordsList)
 
 os.chdir(txtFileDirectoryPath)
-passwordOutputFile = 'FourType.txt'
-writeFile = open(passwordOutputFile, 'w')
-for index in range (0, 30000):
-    wordOne = random.randrange(0, fileSize, 1)
-    wordTwo = random.randrange(0, fileSize, 1)
-    wordThree = random.randrange(0, fileSize, 1)
-    wordFour = random.randrange(0, fileSize, 1)
-    newWord = wordsList[wordOne].strip('\n') + wordsList[wordTwo].strip('\n') + wordsList[wordThree].strip('\n') + wordsList[wordFour].strip('\n') + '\n'
-    writeFile.write(newWord)
-writeFile.close()
+for j in [500,1000,1500,2000]:
+    passwordOutputFile = 'FourType' + str(j) + '.txt'
+    writeFile = open(passwordOutputFile, 'w')
+    for index in range (0, 30000):
+        wordOne = random.randrange(0, j, 1)
+        wordTwo = random.randrange(0, j, 1)
+        wordThree = random.randrange(0, j, 1)
+        wordFour = random.randrange(0, j, 1)
+        newWord = wordsList[wordOne].strip('\n') + wordsList[wordTwo].strip('\n') + wordsList[wordThree].strip('\n') + wordsList[wordFour].strip('\n') + '\n'
+        writeFile.write(newWord)
+    writeFile.close()
 
 passwordOutputFile = 'ThreeType.txt'
 writeFile = open(passwordOutputFile, 'w')
