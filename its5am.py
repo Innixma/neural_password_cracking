@@ -24,6 +24,7 @@ import math
 
 import graphHelper
 
+['FourType500','bookWordsFirstLetter','8type3','16type3', 'cain']
 
 
 john_on_john = ['john_on_john', 73, 'john']
@@ -38,12 +39,37 @@ myspace_on_ThreeType500 = ['myspace_on_ThreeType500', 94, 'myspace']
 john_on_phpbb = ['john_on_phpbb', 73, 'john']
 myspace_on_phpbb = ['myspace_on_phpbb', 94, 'myspace']
 
+john_on_FourType500 = ['john_on_FourType500', 73, 'john']
+myspace_on_FourType500 = ['myspace_on_FourType500', 94, 'myspace']
+
+
+
+john_on_bookWordsFirstLetter = ['john_on_bookWordsFirstLetter', 73, 'john']
+myspace_on_bookWordsFirstLetter = ['myspace_on_bookWordsFirstLetter', 94, 'myspace']
+
+john_on_8type3 = ['john_on_8type3', 73, 'john']
+myspace_on_8type3= ['myspace_on_8type3', 94, 'myspace']
+
+john_on_16type3 = ['john_on_16type3', 73, 'john']
+myspace_on_16type3 = ['myspace_on_16type3', 94, 'myspace']
+
+john_on_cain = ['john_on_cain', 73, 'john']
+myspace_on_cain = ['myspace_on_cain', 94, 'myspace']
+
+
 john_sets = ['john', 73, [john_on_john, myspace_on_john]]
 myspace_sets = ['myspace', 94, [john_on_myspace, myspace_on_myspace]]
 ThreeType500_sets = ['ThreeType500', 73, [john_on_ThreeType500, myspace_on_ThreeType500]]
 phpbb_sets = ['phpbb', 94, [john_on_phpbb, myspace_on_phpbb]]
 
-data_sets = [john_sets, myspace_sets, ThreeType500_sets, phpbb_sets]
+FourType500_sets = ['FourType500', 94, [john_on_FourType500, myspace_on_FourType500]]
+bookWordsFirstLetter_sets = ['bookWordsFirstLetter', 94, [john_on_bookWordsFirstLetter, myspace_on_bookWordsFirstLetter]]
+_8type3_sets = ['8type3', 94, [john_on_8type3, myspace_on_8type3]]
+_16type3_sets = ['16type3', 94, [john_on_16type3, myspace_on_16type3]]
+cain_sets = ['cain', 94, [john_on_cain, myspace_on_cain]]
+
+
+data_sets = [john_sets, myspace_sets, ThreeType500_sets, phpbb_sets,FourType500_sets,bookWordsFirstLetter_sets,_8type3_sets,_16type3_sets,cain_sets]
 
 for word_set in data_sets:
     namesList = []
