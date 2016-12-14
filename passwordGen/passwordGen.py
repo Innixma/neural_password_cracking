@@ -30,6 +30,18 @@ for j in [500,1000,1500,2000]:
     writeFile.close()
 
 for j in [500,1000,1500,2000]:
+    passwordOutputFile = 'FirstThreeChar' + str(j) + '.txt'
+    writeFile = open(passwordOutputFile, 'w')
+    for index in range (0, 30000):
+        wordOne = random.randrange(0, j, 1)
+        wordTwo = random.randrange(0, j, 1)
+        wordThree = random.randrange(0, j, 1)
+        wordFour = random.randrange(0, j, 1)
+        newWord = wordsList[wordOne].strip('\n')[:3] + wordsList[wordTwo].strip('\n')[:3] + wordsList[wordThree].strip('\n')[:3] + wordsList[wordFour].strip('\n')[:3] + '\n'
+        writeFile.write(newWord)
+    writeFile.close()
+
+for j in [500,1000,1500,2000]:
     passwordOutputFile = 'ThreeType' + str(j) + '.txt'
     writeFile = open(passwordOutputFile, 'w')
     for index in range (0, 30000):
