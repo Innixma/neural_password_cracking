@@ -27,12 +27,18 @@ myspace_char_indices = {'9': 25, ')': 9, "'": 7, 'G': 37, '7': 23, 'E': 35, 'F':
 john_data = ['john', 25, 73, john_char_indices]
 myspace_data = ['myspace', 28, 94, myspace_char_indices]
 
+test_sets = []
+
+for i in ['500','1000','1500','2000']:
+    for j in ['FourType', 'FourTypeUpper', 'ThreeType', 'ThreeTypeUpper', 'FirstThreeChar']:
+        name = j + i
+        test_sets.append(name)
 
 #
 data_sets = [myspace_data, john_data]
 
-#test_sets = [ 'myspace', 'ThreeType500', 'phpbb', 'john']
-test_sets = ['FourType500','bookWordsFirstLetter','8type3','16type3', 'cain']
+#test_sets = test_sets + ['myspace', 'phpbb', 'john', 'cain']
+#test_sets = test_sets + ['bookWordsFirstLetter','8type3','16type3']
              
              
              
@@ -71,8 +77,8 @@ for i in range(len(data_sets)):
         #data = data[:14000000]
         data = np.array([line for line in data if len(line) <= 32])
         
-        if len(data) > 5000:
-            data = np.random.choice(data, 5000, replace=False)
+        if len(data) > 500:
+            data = np.random.choice(data, 500, replace=False)
                 
         fullInfo = []
         sentenceBase = np.array([char_indices['~']]*12)

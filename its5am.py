@@ -24,8 +24,16 @@ import math
 
 import graphHelper
 
-['FourType500','bookWordsFirstLetter','8type3','16type3', 'cain']
+#['FourType500','bookWordsFirstLetter','8type3','16type3', 'cain']
 
+data_stuff = []
+for i in ['500','1000','1500','2000']:
+    for j in ['FourType', 'FourTypeUpper', 'ThreeType', 'ThreeTypeUpper', 'FirstThreeChar']:
+        name = j + i
+        johns_stuff_cur = ['john_on_'+name, 73, 'john']
+        myspace_stuff_cur = ['myspace_on_'+name, 94, 'myspace']
+        curNameStuff = [name, 73, [johns_stuff_cur, myspace_stuff_cur]]
+        data_stuff.append(curNameStuff)
 
 john_on_john = ['john_on_john', 73, 'john']
 myspace_on_john = ['myspace_on_john', 94, 'myspace']
@@ -69,8 +77,20 @@ _16type3_sets = ['16type3', 94, [john_on_16type3, myspace_on_16type3]]
 cain_sets = ['cain', 94, [john_on_cain, myspace_on_cain]]
 
 
-data_sets = [john_sets, myspace_sets, ThreeType500_sets, phpbb_sets,FourType500_sets,bookWordsFirstLetter_sets,_8type3_sets,_16type3_sets,cain_sets]
+data_sets = [
+             john_sets,
+             myspace_sets,
+             ThreeType500_sets,
+             phpbb_sets,
+             FourType500_sets,
+             bookWordsFirstLetter_sets,
+             _8type3_sets,
+             _16type3_sets,
+             cain_sets
+             ]
 
+data_sets = data_sets + data_stuff
+             
 for word_set in data_sets:
     namesList = []
     percentiles = []
