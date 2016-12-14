@@ -30,7 +30,7 @@ myspace_data = ['myspace', 28, 94, myspace_char_indices]
 test_sets = []
 
 for i in ['500','1000','1500','2000']:
-    for j in ['FourType', 'FourTypeUpper', 'ThreeType', 'ThreeTypeUpper', 'FirstThreeChar']:
+    for j in ['FourType', 'ThreeType', 'FirstThreeChar']:
         name = j + i
         test_sets.append(name)
 
