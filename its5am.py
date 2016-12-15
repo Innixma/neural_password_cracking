@@ -28,13 +28,14 @@ import graphHelper
 
 data_stuff = []
 for i in ['500','1000','1500','2000']:
-    for j in ['FourType', 'FourTypeUpper', 'ThreeType', 'ThreeTypeUpper', 'FirstThreeChar']:
+    for j in ['FourType', 'ThreeType', 'FirstThreeChar']:
         name = j + i
         johns_stuff_cur = ['john_on_'+name, 73, 'john']
         myspace_stuff_cur = ['myspace_on_'+name, 94, 'myspace']
         curNameStuff = [name, 73, [johns_stuff_cur, myspace_stuff_cur]]
         data_stuff.append(curNameStuff)
 
+"""
 john_on_john = ['john_on_john', 73, 'john']
 myspace_on_john = ['myspace_on_john', 94, 'myspace']
 
@@ -63,8 +64,8 @@ myspace_on_16type3 = ['myspace_on_16type3', 94, 'myspace']
 
 john_on_cain = ['john_on_cain', 73, 'john']
 myspace_on_cain = ['myspace_on_cain', 94, 'myspace']
-
-
+"""
+"""
 john_sets = ['john', 73, [john_on_john, myspace_on_john]]
 myspace_sets = ['myspace', 94, [john_on_myspace, myspace_on_myspace]]
 ThreeType500_sets = ['ThreeType500', 73, [john_on_ThreeType500, myspace_on_ThreeType500]]
@@ -75,8 +76,8 @@ bookWordsFirstLetter_sets = ['bookWordsFirstLetter', 94, [john_on_bookWordsFirst
 _8type3_sets = ['8type3', 94, [john_on_8type3, myspace_on_8type3]]
 _16type3_sets = ['16type3', 94, [john_on_16type3, myspace_on_16type3]]
 cain_sets = ['cain', 94, [john_on_cain, myspace_on_cain]]
-
-
+"""
+"""
 data_sets = [
              john_sets,
              myspace_sets,
@@ -88,7 +89,8 @@ data_sets = [
              _16type3_sets,
              cain_sets
              ]
-
+"""
+data_sets = []
 data_sets = data_sets + data_stuff
              
 for word_set in data_sets:
